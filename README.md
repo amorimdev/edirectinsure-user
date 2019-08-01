@@ -1,6 +1,6 @@
 # EDirectInsure User
 
-This service is responsible to manage user operations
+This service is responsible to manage user crud operations
 
 ### Patterns
 
@@ -23,7 +23,9 @@ $ npm i
 
 ### Package Dependency
 
- - [seneca](https://github.com/senecajs/seneca)
+- [seneca](https://github.com/senecajs/seneca)
+- [lodash](https://github.com/lodash/lodash)
+- [mongo-client](https://github.com/amorimdev/edirectinsure-mongo-client)
 
 ### Environment Variables
 

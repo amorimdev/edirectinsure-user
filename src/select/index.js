@@ -1,7 +1,7 @@
 'use strict'
 
 const role = 'user'
-const { user } = require('mongo-client/models')
+const { user } = require('edirectinsure-mongo-client/models')
 const { pick, omit } = require('lodash')
 const { PICK_FIELDS, LOG_TAG } = require('./fields')
 

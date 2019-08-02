@@ -23,9 +23,9 @@ $ npm i
 
 ### Package Dependency
 
-- [seneca](https://github.com/senecajs/seneca)
+- [edirectinsure-mongo-client](https://github.com/amorimdev/edirectinsure-mongo-client)
 - [lodash](https://github.com/lodash/lodash)
-- [mongo-client](https://github.com/amorimdev/edirectinsure-mongo-client)
+- [seneca](https://github.com/senecajs/seneca)
 
 ### Environment Variables
 

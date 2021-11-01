@@ -15,7 +15,7 @@ seneca.use(Delete)
 seneca.listen({
   type: process.env.USER_PROTOCOL || 'http',
   host: process.env.USER_HOST || '0.0.0.0',
-  port: process.env.USER_PORT || 8202,
+  port: process.env.USER_PORT || process.env.PORT || 8202,
   pin: { role: 'user', cmd: '*' }
 })
 

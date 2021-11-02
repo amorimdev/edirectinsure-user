@@ -38,6 +38,7 @@
   "dependencies": {
     "edirectinsure-mongo-client": "github:amorimdev/edirectinsure-mongo-client#semver:^1",
     "lodash": "^4.17.15",
+    "seneca-amqp-transport": "^2.2.0",
     "seneca": "^3.12.0"
   },
   "devDependencies": {

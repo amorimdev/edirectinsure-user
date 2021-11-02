@@ -13,18 +13,28 @@ seneca.use(Update)
 seneca.use(Delete)
 
 seneca.listen({
-  type: process.env.USER_TRANSPORT || 'http',
-  host: process.env.USER_HOST || '0.0.0.0',
-  port: process.env.USER_PORT || process.env.PORT || 8202,
-  protocol: process.env.USER_PROTOCOL || 'http',
+  ...((process.env.USER_TRANSPORT === 'amqp' && {
+    type: process.env.USER_TRANSPORT,
+    url: process.env.AMQP_URL
+  }) || {
+    type: process.env.USER_TRANSPORT || 'http',
+    host: process.env.USER_HOST || '0.0.0.0',
+    port: process.env.USER_PORT || process.env.PORT || 8202,
+    protocol: process.env.USER_PROTOCOL || 'http'
+  }),
   pin: { role: 'user', cmd: '*' }
 })
 
 seneca.client({
-  type: process.env.AUTH_TRANSPORT || 'http',
-  host: process.env.AUTH_HOST || '0.0.0.0',
-  port: process.env.AUTH_PORT || 8201,
-  protocol: process.env.AUTH_PROTOCOL || 'http',
+  ...((process.env.AUTH_TRANSPORT === 'amqp' && {
+    type: process.env.AUTH_TRANSPORT,
+    url: process.env.AMQP_URL
+  }) || {
+    type: process.env.AUTH_TRANSPORT || 'http',
+    host: process.env.AUTH_HOST || '0.0.0.0',
+    port: process.env.AUTH_PORT || 8201,
+    protocol: process.env.AUTH_PROTOCOL || 'http'
+  }),
   pin: { role: 'auth', cmd: 'encrypt-password' }
 })
 
